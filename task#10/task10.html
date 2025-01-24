@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        task 10
+    </title>
+</head>
+<body>
+<button class = "first">
+    Get ip
+</button>
+
+<script>
+    const first = document.querySelector(".first");
+    first.addEventListener("click" , function()
+{
+   
+    fetch("https://api.ipify.org/").then(response => response.text()).then(data=> first.innerHTML = data).catch(error=> console.log(`error`));
+})
+</script>
+
+</body>
+</html>
