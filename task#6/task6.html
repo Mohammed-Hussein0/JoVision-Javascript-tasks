@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+    task 6
+</title>
+</head>
+<body>
+
+    <button class = "first">
+        Click first
+    </button>
+
+    <button class = "second">
+        Click second
+    </button>
+    <button class = "third">
+        Click third
+    </button>
+    <button class = "fourth">
+        Click fourth
+    </button>
+    <button class = "fifth">
+        Click fifth
+    </button>
+
+
+<script>
+
+    function create(arr)
+    {
+        for(let i = 1 ; i < 100 ; i++)
+    {
+    arr.push(i);
+    }
+    }
+    function shuffleArray(arr)
+    {
+     for(let i = arr.length-1; i > 0 ; i--)
+     {
+        let j = Math.floor(Math.random()*(i+1));
+        [arr[i],arr[j]] = [arr[j],arr[i]];
+     }
+    }
+    const first = document.querySelector(".first");
+    first.addEventListener("click",function()
+{
+    const arr = [];
+    create(arr);
+    for(let i = 0 ; i < arr.length ; i++)
+{
+    if(arr[i] % 3 == 0)
+{
+    arr.splice(i,1);
+    i--;
+}
+
+}
+   console.log(arr);
+     
+})
+
+const second = document.querySelector(".second");
+    second.addEventListener("click",function()
+{
+    const arr = [];
+    create(arr);
+    for(let i = 100 ; i < 150 ; i++)
+{
+    arr.push(i);
+}
+   console.log(arr);
+     
+})
+
+const third = document.querySelector(".third");
+    third.addEventListener("click",function()
+{
+    const arr = [];
+    create(arr);
+    for(let i = 0 ; i < arr.length ; i++)
+{
+    arr[i] +=3;
+}
+   console.log(arr);
+     
+})
+
+const fourth = document.querySelector(".fourth");
+    fourth.addEventListener("click",function()
+{
+    const arr = [];
+    create(arr);
+    for(let i = 20 ; i <= 40 ; i++)
+{
+    console.log(arr[i]);
+}
+  
+     
+})
+
+const fifth = document.querySelector(".fifth");
+    fifth.addEventListener("click",function()
+{
+    const arr = [];
+    create(arr);
+    shuffleArray(arr);
+    console.log(arr);
+    arr.sort(function(a,b)
+{
+    return b-a
+});
+    console.log(arr);
+    
+  
+     
+})
+</script>
+</body>
+</html>
