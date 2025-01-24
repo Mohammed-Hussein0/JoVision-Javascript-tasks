@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        task 13
+    </title>
+</head>
+<body>
+    <input type = "text" title = "Name" class = "name" placeholder="Name">
+    <button class = "Submit">
+        Submit
+    </button>
+
+
+<script>
+   const submit = document.querySelector(".Submit");
+   submit.addEventListener("click", function()
+{
+    
+        const name = document.querySelector(".name").value;
+        fetch(`https://api.agify.io?name=${name}`).then(response => response.json())
+        .then(({name,age}) => {alert(`your name is ${name} and your age is ${age}`)}).catch(error =>{(alert(`Error`))});
+
+})
+</script>
+
+</body>
+</html>
